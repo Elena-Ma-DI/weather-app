@@ -1,1 +1,218 @@
-/* You can add global styles to this file, and also import other style files */
+/* Global styles */
+:root{
+    --sky-gradient: linear-gradient(135deg, #72c2f1, #5499e8);
+    --yellow-1: #FAC742;
+    --white: #FFF;
+    --grey-1: #EDEDED;
+    --shadow-dark: rgba(0, 0, 0, 0.3);
+    --shadow-light: rgba(255, 255, 255, 0.1);
+    --blue-2: #4A90E2;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family:'Times New Roman', Times, serif;
+    font-size: 16px;
+    width: 100%;
+    height: 100%;
+    background: var(--sky-gradient);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-size: cover;
+}
+
+.container {
+    width: 400px;
+    height: 80vh;
+    background-color: var(--blue-2);
+    border-radius: 20px;
+    box-shadow: 15px 15px 30px var(--shadow-dark), -10px -10px 20px var(--shadow-light);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.upper-data {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    height: 50%;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    background: var(--yellow-1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.upper-data img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(0.9);
+}
+
+.weather-data {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.location {
+    font-size: 1.5em;
+    color: var(--white);
+    text-align: center;
+}
+
+.temperature {
+    font-size: 4.5em;
+    color: var(--white);
+    text-align: center;
+    font-weight: 900;
+}
+
+.lower-data {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    height: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    padding: 1.5em;
+    background-color: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+}
+
+.more-info-label {
+    font-family:'Times New Roman', Times, serif;
+    color: var(--white);
+    font-size: 1.3em;
+    margin-top: 1em;
+    text-align: center;
+    font-weight: 800;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-shadow: 2px 2px 5px var(--shadow-dark);
+
+
+}
+
+.more-info-container {
+    font-family: 'Times New Roman', Times, serif;
+    flex: 1;
+    margin-top: 1em;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    text-align: center;
+    color: var(--white);
+    font-size: 1em;
+    
+}
+
+.info-block {
+    width: 45%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0.8em;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    margin-bottom: 10px;
+    box-shadow: 3px 3px 10px var(--shadow-dark);
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.info-block-label {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 0.5em;
+}
+
+.info-block img {
+    width: 2.5em; /* Αυξάνουμε το μέγεθος της εικόνας */
+    transform: scale(1.2); /* Μεγαλώνουμε την εικόνα */
+    transition: all 0.3s ease;
+}
+
+
+.info-block span {
+    color: var(--white);
+    font-size: 1.2em;
+    font-weight: 700;
+    margin-top: 0.2em; /* Μικρό κενό κάτω από τις εικόνες */
+    text-shadow: 2px 2px 5px var(--shadow-dark);
+}
+
+/* .search {
+    margin-bottom: 1em;
+    text-align: center;
+}
+
+.search input {
+    padding: 1em;
+    border-radius: 20px;
+    border: none;
+    width: 70%;
+    margin-right: 0.5em;
+    outline: none;
+    color:black;
+    font-size: 1em;
+    text-align: center;
+
+} */
+
+
+.search {
+    margin-bottom: 2em; /* Μεγαλώνουμε το κενό για να το κατεβάσουμε πιο κάτω */
+    text-align: center;
+}
+
+.search input {
+    padding: 1.2em; /* Μεγαλώνουμε το padding για πιο άνετη εμφάνιση */
+    border-radius: 25px; /* Στρογγυλεμένες γωνίες για μοντέρνα εμφάνιση */
+    border: 2px solid rgba(255, 255, 255, 0.3); /* Ελαφρύ border */
+    width: 70%;
+    margin-right: 0.5em;
+    outline: none;
+    color: black;
+    font-size: 1em;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Προσθέτουμε σκιά για βάθος */
+    background-color: rgba(255, 255, 255, 0.9); /* Ελαφρώς ημιδιαφανές background */
+    transition: all 0.3s ease; /* Ομαλή μετάβαση κατά την αλληλεπίδραση */
+}
+
+.search input:focus {
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2); /* Πιο έντονη σκιά όταν είναι ενεργό */
+    background-color: rgba(255, 255, 255, 1); /* Καθαρό λευκό όταν επιλέγεται */
+}
